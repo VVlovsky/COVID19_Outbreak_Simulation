@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from static.simulation import main
+import static.simulation.main as main
 
 
 # Create your views here.

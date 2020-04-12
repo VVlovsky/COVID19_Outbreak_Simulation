@@ -24,7 +24,7 @@ def create_plot(data):
     plt.rcParams['hatch.color'] = 'white'
     plt.rcParams['xtick.color'] = 'white'
     plt.rcParams['ytick.color'] = 'white'
-    plt.rcParams['axes.titlecolor'] = 'white'
+    # plt.rcParams['axes.titlecolor'] = 'white'
     fig = plt.figure(FigureClass=MyFigure, figtitle='')
     ax = fig.subplots()
 

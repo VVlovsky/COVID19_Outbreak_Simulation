@@ -1,4 +1,6 @@
 mapboxgl.accessToken = config.MY_KEY;
+
+
 var map = new mapboxgl.Map({
     container: 'map', //this is the id of the container you want your map in
     style: 'mapbox://styles/mapbox/dark-v10', // this controls the style of the map. Want to see more? Try changing 'light' to 'simple'.

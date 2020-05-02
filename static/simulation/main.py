@@ -105,9 +105,9 @@ def main(data):
         oc_diagnose_speed_exp_rate = 0.05
 
         if day == 47:
-            countries_arr['CHN'].contact_rate_exp_rate = 0.05
-            countries_arr['CHN'].quarantined_rate_exp_rate = 0.05
-            countries_arr['CHN'].diagnose_speed_exp_rate = 0.1
+            countries_arr['CHN'].contact_rate_exp_rate = 0.04
+            countries_arr['CHN'].quarantined_rate_exp_rate = 0.04
+            countries_arr['CHN'].diagnose_speed_exp_rate = 0.06
             countries_arr['CHN'].day_when_infected = day
             countries_arr['CHN'].quarantine_mode = True
 

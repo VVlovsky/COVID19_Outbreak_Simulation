@@ -5,7 +5,7 @@
 # COVID19_Outbreak_Simulation/COVID19_Outbreak_Simulation/views.py: 3,4
 # COVID19_Outbreak_Simulation/COVID19_Outbreak_Simulation/wsgi.py: 12
 # COVID19_Outbreak_Simulation/manage.py: 10
-Django == 3.0.4
+Django == 3.0.7
 
 # COVID19_Outbreak_Simulation/plot.py: 1,2,3
 # COVID19_Outbreak_Simulation/seir.py: 3

@@ -42,7 +42,7 @@ class Country:
         self.suspected_to_confirmed_0 = 0.00001  # 0.5 - iv
         self.suspected_to_confirmed_max = 0.5
         self.suspected_to_confirmed_exp_rate = 0.05
-        #TODO func to count suspected_to_confirmed_rate
+        # TODO func to count suspected_to_confirmed_rate
         self.infected_to_confirmed_min = 0.04  # 0.1326
         self.infected_to_confirmed_max = 2.5  # 2.5
         self.diagnose_speed_exp_rate = 0  # 0.2

@@ -2,8 +2,10 @@ from static.simulation.plot import create_plot
 import numpy as np
 from static.simulation.country import CountryCreator
 from static.simulation.seir import seibqhr
+from static.simulation.real_data import download
 
 # TODO Add True Recovered
+download()
 countries_arr, countries_keys = CountryCreator.initialization()
 FATALITY_RATE = 0.01
 
@@ -48,6 +50,9 @@ countries_arr['CHN'].infected = 1
 
 
 infected_countries_arr.append('CHN')
+
+
+
 
 
 def infec(code, day):

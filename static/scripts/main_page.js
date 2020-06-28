@@ -42,7 +42,8 @@ async function update() {
     let days = 360;
     let value = "init " + days;
     let url = 'get_data?user_input=' + value;
-    let infected = ['USA', 'AUS', 'NGA', 'CHN'];
+    // let infected = ['USA', 'AUS', 'NGA', 'CHN'];
+    let date_var = new Date(2019, 11, 8)
     for (let i = 0; i < days; i++) {
 
 
@@ -54,7 +55,9 @@ async function update() {
             integrate_plot(document.getElementById("plot"), data);
             colorize(data.value["infected_countries_arr"]);
             document.getElementById("day_target").innerText = "DAY: " + i
-
+            let nextDay = new Date(2018, 11, 8 + i);
+            document.getElementById("date_target").innerText = nextDay.getFullYear() + "-" + (nextDay.getMonth() + 1) + "-" + nextDay.getDate()
+            date_var.setDate(new Date().getDate() + 1)
 
         })
         url = 'get_data?user_input=' + days;

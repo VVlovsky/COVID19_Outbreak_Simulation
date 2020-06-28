@@ -29,6 +29,7 @@ def seibqhr(day_after_infected, c0, cb, r1, beta, q0, qm, r2, m, b, f0, fm, r4, 
     :param qm: Maximum quarantined rate of exposed individuals under the current control strategies
     :param r2: Exponential increasing rate of quarantined rate of exposed individuals
     :param m: Transition rate of susceptible individuals to the suspected class
+    :param m: Transition rate of susceptible individuals to the suspected class
     :param b: Detection rate of the suspected class
     :param f0: Confirmation ratio: Transition rate of exposed individuals in the suspected class to the quarantined infected class initial value
     :param fm: Confirmation ratio: Transition rate of exposed individuals in the suspected class to the quarantined infected class maximum

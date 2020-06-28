@@ -66,7 +66,7 @@ html, body {
     height: 80%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 #up_right_layer {
@@ -81,20 +81,27 @@ html, body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    width: 100%;
 }
 
-#deaths_plate {
-    width: 50%;
+/*#deaths_plate {*/
+/*    width: 50%;*/
 
-}
+/*}*/
 
-#recovered_plate {
-    width: 50%;
+/*#recovered_plate {*/
+/*    width: 50%;*/
 
-}
+/*}*/
 
 #plot_plate {
-    height: 45%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#plot_plate2 {
+    height: 50%;
     display: flex;
     justify-content: center;
 }
@@ -108,6 +115,9 @@ html, body {
 
 #options {
     width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 #simulate {
@@ -135,23 +145,21 @@ html, body {
 
 #confirmed_plate {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     flex-direction: column;
     text-align: center;
     width: 20%;
 }
 
-#cpt {
-    height: 20%;
-}
+/*#cpt {*/
+/*    height: 20%;*/
+/*}*/
 
-#cpb {
-    height: 80%;
-}
+/*#cpb {*/
+/*    height: 80%;*/
+/*}*/
 
 #confirmed_plate h1 {
-
-
     color: #e15000;
 }
 
@@ -163,6 +171,41 @@ html, body {
     color: green;
 }
 
+#confirmed_plate2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#confirmed_plate2 h1 {
+    height: 80%;
+    color: #e15000;
+
+}
+
+#deaths_plate2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#deaths_plate2 h1 {
+    height: 80%;
+    color: red;
+
+}
+
+#recovered_plate2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#recovered_plate2 h1 {
+    height: 80%;
+    color: green;
+
+}
 
 #map_plate {
     width: 80%;
@@ -173,6 +216,14 @@ html, body {
 }
 
 #plot {
+    margin: 10px;
+
+    max-width: 90%;
+    max-height: 90%;
+
+}
+
+#plot2 {
     margin: 10px;
 
     max-width: 90%;

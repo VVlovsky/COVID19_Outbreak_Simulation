@@ -7,6 +7,7 @@ def download():
     rc = []
     rr = []
     rd = []
+
     path = os.getcwd()
 
     death_url = (
@@ -18,23 +19,23 @@ def download():
 
     req = requests.get(death_url)
     url_content = req.content
-    csv_file = open(path + '/../data/death.csv', 'wb')
+    csv_file = open(path + '/static/data/death.csv', 'wb')
     csv_file.write(url_content)
     csv_file.close()
 
     req = requests.get(confirmed_url)
     url_content = req.content
-    csv_file = open(path + '/../data/confirmed.csv', 'wb')
+    csv_file = open(path + '/static/data/confirmed.csv', 'wb')
     csv_file.write(url_content)
     csv_file.close()
 
     req = requests.get(recovered_url)
     url_content = req.content
-    csv_file = open(path + '/../data/recovered.csv', 'wb')
+    csv_file = open(path + '/static/data/recovered.csv', 'wb')
     csv_file.write(url_content)
     csv_file.close()
 
-    cv = CSVParse('../data/confirmed.csv')
+    cv = CSVParse('static/data/confirmed.csv')
 
     try:
         i = 4
@@ -44,7 +45,7 @@ def download():
     except:
         pass
 
-    cv = CSVParse('../data/recovered.csv')
+    cv = CSVParse('static/data/recovered.csv')
     try:
         i = 4
         while True:
@@ -53,7 +54,7 @@ def download():
     except:
         pass
 
-    cv = CSVParse('../data/death.csv')
+    cv = CSVParse('static/data/death.csv')
     try:
         i = 4
         while True:
@@ -62,6 +63,7 @@ def download():
     except:
         pass
 
+    return rc, rr, rd
 
 class CSVParse:
     def __init__(self, csv_file, delimiter=','):
@@ -85,4 +87,4 @@ class CSVParse:
             # print(to_return_arr)
         return sum([int(x) for x in to_return_arr])
 
-download()
+

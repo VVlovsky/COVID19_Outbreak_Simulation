@@ -5,7 +5,7 @@ from static.simulation.seir import seibqhr
 from static.simulation.real_data import download
 
 # TODO Add True Recovered
-download()
+rc, rr, rd = download()
 countries_arr, countries_keys = CountryCreator.initialization()
 FATALITY_RATE = 0.01
 
@@ -209,11 +209,14 @@ def main(data):
             "deaths": int(total_deaths),
             "recovered": int(total_recovered),
             "plot": "0",
+            "plot2": "0",
             "infected_countries_arr": infected_countries_arr
         }
 
         plot_data = [days, total_cases_arr, total_deaths_arr, total_recovered_arr]
         result["plot"] = create_plot(plot_data)
+        result["plot2"] = create_plot(plot_data)
+
 
         yield result
 

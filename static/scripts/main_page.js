@@ -53,6 +53,8 @@ async function update() {
             displayData(document.getElementById("deaths"), data);
             displayData(document.getElementById("recovered"), data);
             integrate_plot(document.getElementById("plot"), data);
+            integrate_plot(document.getElementById("plot2"), data);
+
             colorize(data.value["infected_countries_arr"]);
             document.getElementById("day_target").innerText = "DAY: " + i
             let nextDay = new Date(2018, 11, 8 + i);

@@ -27,9 +27,37 @@ def create_plot(data):
     # plt.rcParams['axes.titlecolor'] = 'white'
     fig = plt.figure(FigureClass=MyFigure, figtitle='')
     ax = fig.subplots()
+    ax.plot(range(data[0]), data[1], c='r')
+    ax.plot(range(data[0]), data[2], c='#ff4a4a')
 
+    # ax.plot(range(data[0]), data[3], c='g')
+
+    # Save it to a temporary buffer.
+    buf = BytesIO()
+    fig.savefig(buf, format="png")
+    print(fig)
+    # Embed the result in the html output.
+    data = base64.b64encode(buf.getbuffer()).decode("ascii")
+    return f"data:image/png;base64, {data}"
+
+
+def create_plot2(data):
+    plt.rcParams['lines.linewidth'] = 3
+    plt.rcParams['axes.facecolor'] = '#191919'
+    plt.rcParams['savefig.facecolor'] = '#191919'
+    plt.rcParams['axes.edgecolor'] = 'white'
+    plt.rcParams['axes.labelcolor'] = 'white'
+    plt.rcParams['patch.edgecolor'] = 'white'
+    plt.rcParams['hatch.color'] = 'white'
+    plt.rcParams['xtick.color'] = 'white'
+    plt.rcParams['ytick.color'] = 'white'
+    # plt.rcParams['axes.titlecolor'] = 'white'
+    fig = plt.figure(FigureClass=MyFigure, figtitle='')
+    ax = fig.subplots()
     ax.plot(range(data[0]), data[1], c='#e15000')
-    ax.plot(range(data[0]), data[2], c='r')
+    ax.plot(range(data[0]), data[2], c='#ff772b')
+
+
     # ax.plot(range(data[0]), data[3], c='g')
 
     # Save it to a temporary buffer.

@@ -1,4 +1,4 @@
-from static.simulation.plot import create_plot
+from static.simulation.plot import create_plot, create_plot2
 import numpy as np
 from static.simulation.country import CountryCreator
 from static.simulation.seir import seibqhr
@@ -34,6 +34,10 @@ total_cases_arr = []
 true_cases_arr = []
 total_deaths_arr = []
 total_recovered_arr = []
+r_total_cases_arr = []
+# r_true_cases_arr = []
+r_total_deaths_arr = []
+r_total_recovered_arr = []
 total_true_recovered_arr = []
 infected_countries_arr = []
 data_transmitter = 0
@@ -110,9 +114,9 @@ def main(data):
         oc_diagnose_speed_exp_rate = 0.05
 
         if day == 47:
-            countries_arr['CHN'].contact_rate_exp_rate = 0.04
-            countries_arr['CHN'].quarantined_rate_exp_rate = 0.04
-            countries_arr['CHN'].diagnose_speed_exp_rate = 0.06
+            countries_arr['CHN'].contact_rate_exp_rate = 0.07
+            countries_arr['CHN'].quarantined_rate_exp_rate = 0.07
+            countries_arr['CHN'].diagnose_speed_exp_rate = 0.03
             countries_arr['CHN'].day_when_infected = day
             countries_arr['CHN'].quarantine_mode = True
 
@@ -183,6 +187,20 @@ def main(data):
         true_cases_arr.append(true_cases)
         total_deaths_arr.append(day_deaths)
         total_recovered_arr.append(day_recovered)
+
+        if day < 48:
+            r_total_cases_arr.append(day_cases)
+            r_total_deaths_arr.append(day_deaths)
+            r_total_recovered_arr.append(day_recovered)
+        elif day-48 < len(rc):
+            r_total_cases_arr.append(rc[day-48] - rd[day-48] - rr[day-48])
+            r_total_deaths_arr.append(rd[day-48])
+            r_total_recovered_arr.append(rr[day-48])
+        else:
+            r_total_cases_arr.append(None)
+            r_total_deaths_arr.append(None)
+            r_total_recovered_arr.append(None)
+
         total_cases = total_cases_arr[-1]
         true_cases = true_cases_arr[-1]
         total_deaths = total_deaths_arr[-1]
@@ -208,14 +226,19 @@ def main(data):
             "true_cases": int(true_cases),
             "deaths": int(total_deaths),
             "recovered": int(total_recovered),
+            "confirmed2": int(r_total_cases_arr[-1]),
+            "deaths2": int(r_total_deaths_arr[-1]),
+            "recovered2": int(r_total_recovered_arr[-1]),
+            "rc"
             "plot": "0",
             "plot2": "0",
             "infected_countries_arr": infected_countries_arr
         }
 
-        plot_data = [days, total_cases_arr, total_deaths_arr, total_recovered_arr]
-        result["plot"] = create_plot(plot_data)
-        result["plot2"] = create_plot(plot_data)
+        plot_data = [days, total_cases_arr, r_total_cases_arr]
+        r_plot_data = [days, total_deaths_arr, r_total_deaths_arr]
+        result["plot"] = create_plot(r_plot_data)
+        result["plot2"] = create_plot2(plot_data)
 
 
         yield result

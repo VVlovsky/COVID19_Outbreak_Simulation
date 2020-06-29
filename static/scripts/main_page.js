@@ -52,6 +52,9 @@ async function update() {
             displayData(document.getElementById("true_cases"), data);
             displayData(document.getElementById("deaths"), data);
             displayData(document.getElementById("recovered"), data);
+            displayData(document.getElementById("confirmed2"), data);
+            displayData(document.getElementById("deaths2"), data);
+            displayData(document.getElementById("recovered2"), data);
             integrate_plot(document.getElementById("plot"), data);
             integrate_plot(document.getElementById("plot2"), data);
 

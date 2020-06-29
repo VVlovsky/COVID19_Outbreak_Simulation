@@ -109,14 +109,14 @@ def main(data):
         true_cases = 0
         day_recovered = 0
         day_true_recovered = 0
-        oc_contact_rate_exp_rate = 0.005
+        oc_contact_rate_exp_rate = 0.004
         oc_quarantined_rate_exp_rate = 0.005
         oc_diagnose_speed_exp_rate = 0.05
 
         if day == 47:
-            countries_arr['CHN'].contact_rate_exp_rate = 0.07
-            countries_arr['CHN'].quarantined_rate_exp_rate = 0.07
-            countries_arr['CHN'].diagnose_speed_exp_rate = 0.03
+            countries_arr['CHN'].contact_rate_exp_rate = 0.1
+            countries_arr['CHN'].quarantined_rate_exp_rate = 0.1
+            countries_arr['CHN'].diagnose_speed_exp_rate = 0.1
             countries_arr['CHN'].day_when_infected = day
             countries_arr['CHN'].quarantine_mode = True
 
@@ -197,9 +197,9 @@ def main(data):
             r_total_deaths_arr.append(rd[day-48])
             r_total_recovered_arr.append(rr[day-48])
         else:
-            r_total_cases_arr.append(None)
-            r_total_deaths_arr.append(None)
-            r_total_recovered_arr.append(None)
+            r_total_cases_arr.append(r_total_cases_arr[-1])
+            r_total_deaths_arr.append(r_total_deaths_arr[-1])
+            r_total_recovered_arr.append(r_total_recovered_arr[-1])
 
         total_cases = total_cases_arr[-1]
         true_cases = true_cases_arr[-1]

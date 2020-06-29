@@ -46,7 +46,7 @@ class Country:
         self.infected_to_confirmed_min = 0.04  # 0.1326
         self.infected_to_confirmed_max = 2.5  # 2.5
         self.diagnose_speed_exp_rate = 0  # 0.2
-        self.death_rate = 0.0045
+        self.death_rate = 0.004
         self.day_when_infected = 0
         self.quarantine_mode = False
 
